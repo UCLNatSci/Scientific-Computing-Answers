@@ -51,7 +51,7 @@ print_rhombus(5)
 # In[2]:
 
 
-# It is crucial to understand how the importance of the return statement.
+# It is crucial to understand the importance of the return statement.
 # The return statement determines the *output* of the function.
 # For 1 and 2 the function shoud return a value of True or False.
 
