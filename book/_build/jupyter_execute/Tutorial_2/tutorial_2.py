@@ -4,41 +4,6 @@
 # # Tutorial 2
 # 
 # ## Question 1
-# 
-# Use `for` loops and `print(end="")` to write functions which print the following patterns:
-# 
-# 1. `print_square(n)` where `n` is the number of stars along each edge.
-# 
-# ```
-# *****
-# *   *
-# *   *
-# *   *
-# *****
-# ```
-# 2. `print_rhombus(n)` where `n` is the number of stars along each edge.
-# 
-# ```
-#     *****
-#    *   *
-#   *   *
-#  *   *
-# *****
-# ```
-#  
-# 3. `print_numbers(n)` where `n` is the number at the centre.
-# 
-# ```
-# 1       1
-#  2     2
-#   3   3
-#    4 4
-#     5
-#    4 4
-#   3   3
-#  2     2
-# 1       1
-# ```
 
 # In[1]:
 
@@ -82,14 +47,6 @@ print_rhombus(5)
 
 
 # ## Question 2
-# 
-# An integer $n$ is a *prime number* if it is divisible only by 1 and $n$. 
-# 
-# 1. Write a function `is_divisible(n, m)` which returns `True` if `n` is divisible by `m`, and otherwise returns `False`.
-# 1. Write a function `is_prime(n)` which returns `False` if `n` is divisible by any integer between `2` and `n-1`, and otherwise returns `True`.
-# 1. Write a function `number_of_primes(n)` which returns the number of prime numbers less than or equal to `n` [NB 1 is *not* a prime number].
-# 
-# Check the correctness of your functions by writing two tests for each.
 
 # In[2]:
 
@@ -131,28 +88,24 @@ print("Number of prime numbers up to 11:", number_of_primes(11))
 
 # ## Question 3
 # 
-# A [solid of revolution](https://en.wikipedia.org/wiki/Solid_of_revolution) is a three-dimensional figure contstructed by rotating a curve about a straight line. We can estimate the volume of a solid of revolution by dividing it into a sequence of stacked discs and summing the volume of each.
+# This question is designed to allow you to combine loops and functions together.
+# It is a very typical example of how we might perform a computation in scientific computing.
+# If you couldn't complete it this time it would make excellent exam preparation!
 # 
-# A sphere of radius $R$ is formed by rotating the curve $y = \sqrt{R^2 - x^2}$ around the x-axis between $-R$ and $R$.
+# We need to calculate the sum of the areas of the discs in the following diagram.
 # 
-# ![a](https://miro.medium.com/max/2400/0*d7QEcno6XhPOiJSt.png)
 # 
-# Use the following steps to estimate the volume of a sphere of radius 1.
+# ```{image} sphere_vol.jpg
+# :alt: sphere volume
+# :width: 500px
+# ```
 # 
-# 1. Write a function `vol_disc(R, x, dx)` which returns the volume of the disc centred at position `x` with thickness `dx`. 
-# 1. Estimate the volume of a sphere of radius 1 by dividing the figure into 10 discs equally spaced between `-1` and `1` [use a value of 3.14159 for $\pi$].
-# 1. Write a function `sphere_vol(R, n)` which returns the estimate of the volume of a sphere of radius `R` calculated by dividing it into `n` discs.
-# 1. The estimate should get more accurate as we increase `n`. We can estimate the accuracy by calculating the difference between `sphere_vol(R, n)` and `sphere_vol(R, n-1)`. For `R = 1`, how large does `n` need to be so that difference between consecutive estimates is less than $10^{-4}$?
+# 1. First, write a function `vol_disc` which returns the volume of a single disc. Writing the function first allows to test this code separately from the remaining complexity of the problem. 
 
 # In[3]:
 
 
-# This question is designed to allow you to combine loops and functions together.
-# It is a very typical example of how we might perform a computation in scientific computing.
-# If you couldn't complete it this time it would make excellent exam preparation!
-
-# 1. Writing the function first allows to test this code separately from the remaining complexity
-# of the problem. 
+# 1. 
 
 def vol_disc(R, x, dx):
     r = (R**2 - x**2)**0.5
@@ -160,19 +113,31 @@ def vol_disc(R, x, dx):
     # We hardcode the value of pi here. Later you will learn about numpy, a mathematical
     # library containing many useful functions, including a value for pi.
 
+
+# 2. Next, calculate the sum of 10 discs. The width of each is 2 / 10.
+# 
+# There are 10 discs, with `i` running from `0` to `9`. Left hand edge of disc `i` is at position `x=-1 + (i/10) * 2`.
+
+# In[4]:
+
+
 # 2. We first set variables containing values we will use in the computation.
 vol = 0
-dx = 2 / 10 # width of each disc
+d = 2 / 10 # width of each disc
 for i in range(10):
     x = -1 + (i / 10) * 2 # the x position of the left-hand edge of each disc
-    vol += vol_disc(1, x, dx)
+    vol += vol_disc(1, x, d)
     
 print("Volume of sphere radius 1:", vol)
 
 # let's check it against the formula vol = (4/3)*pi*r**3
 print("4/3 * pi * 1^3:", (4/3) * 3.14159)
 
-# 3. It would be a good idea to draw a diagram before writing this code. 
+
+# 3. Extend to a sphere of radius `R` divided into `n` discs. Left hand edge of disc `i` is at position `x = -R + (i / n) * 2 * R`.
+
+# In[5]:
+
 
 def sphere_vol(R, n):
     vol = 0
@@ -183,23 +148,32 @@ def sphere_vol(R, n):
         vol += vol_disc(R, x, dx)
     return vol
 
-# 4. Use a while loop so that we terminate once we reach the required level of accuracy
-        
+
+# 4. This is another application of a `while` loop. We need to terminate once the difference between consecutive estimates is less than the tolerance of $1 \times 10^{-4}$.
+# 
+# To calculate this, we need to keep track of the previous estimate using a variable `vol_prev` then calculate the difference. But note that the difference could be positive or negative, which is why we have the condition `diff > 1e-4 and diff < -1e-4`. When we learn about `numpy` we can instead use the function `np.abs`.
+
+# In[6]:
+
+
 diff = 1
 vol = 0
 n = 2
-while diff > 1e-4:
+while diff > 1e-4 or diff < -1e-4:
     vol_prev = vol
     vol = sphere_vol(1, n)
     diff = vol - vol_prev
-    # could use np.abs here instead (when you learn about numpy)
-    if diff < 0:
-        diff = diff * -1
+    print(vol)
+
     n += 1
     # print("vol:", vol)
     # print("diff:", diff)
         
-print(n)
-print(vol)
-    
+print("n =", n, "vol =", vol)
+
+
+# In[ ]:
+
+
+
 

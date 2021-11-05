@@ -86,7 +86,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Scientific Computing Workbook
+   Scientific Computing Answers
   </a>
  </li>
 </ul>
@@ -212,41 +212,6 @@
 <h1>Tutorial 2<a class="headerlink" href="#tutorial-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="question-1">
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and <code class="docutils literal notranslate"><span class="pre">print(end=&quot;&quot;)</span></code> to write functions which print the following patterns:</p>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print_square(n)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of stars along each edge.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*****</span>
-<span class="o">*</span>   <span class="o">*</span>
-<span class="o">*</span>   <span class="o">*</span>
-<span class="o">*</span>   <span class="o">*</span>
-<span class="o">*****</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print_rhombus(n)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of stars along each edge.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">*****</span>
-   <span class="o">*</span>   <span class="o">*</span>
-  <span class="o">*</span>   <span class="o">*</span>
- <span class="o">*</span>   <span class="o">*</span>
-<span class="o">*****</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print_numbers(n)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number at the centre.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>       <span class="mi">1</span>
- <span class="mi">2</span>     <span class="mi">2</span>
-  <span class="mi">3</span>   <span class="mi">3</span>
-   <span class="mi">4</span> <span class="mi">4</span>
-    <span class="mi">5</span>
-   <span class="mi">4</span> <span class="mi">4</span>
-  <span class="mi">3</span>   <span class="mi">3</span>
- <span class="mi">2</span>     <span class="mi">2</span>
-<span class="mi">1</span>       <span class="mi">1</span>
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this question is perhaps harder than it intially looks.</span>
@@ -307,13 +272,6 @@
 </div>
 <div class="section" id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
-<p>An integer <span class="math notranslate nohighlight">\(n\)</span> is a <em>prime number</em> if it is divisible only by 1 and <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<ol class="simple">
-<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">is_divisible(n,</span> <span class="pre">m)</span></code> which returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">n</span></code> is divisible by <code class="docutils literal notranslate"><span class="pre">m</span></code>, and otherwise returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">is_prime(n)</span></code> which returns <code class="docutils literal notranslate"><span class="pre">False</span></code> if <code class="docutils literal notranslate"><span class="pre">n</span></code> is divisible by any integer between <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, and otherwise returns <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">number_of_primes(n)</span></code> which returns the number of prime numbers less than or equal to <code class="docutils literal notranslate"><span class="pre">n</span></code> [NB 1 is <em>not</em> a prime number].</p></li>
-</ol>
-<p>Check the correctness of your functions by writing two tests for each.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It is crucial to understand how the importance of the return statement.</span>
@@ -366,46 +324,60 @@ Number of prime numbers up to 11: 5
 </div>
 <div class="section" id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
-<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Solid_of_revolution">solid of revolution</a> is a three-dimensional figure contstructed by rotating a curve about a straight line. We can estimate the volume of a solid of revolution by dividing it into a sequence of stacked discs and summing the volume of each.</p>
-<p>A sphere of radius <span class="math notranslate nohighlight">\(R\)</span> is formed by rotating the curve <span class="math notranslate nohighlight">\(y = \sqrt{R^2 - x^2}\)</span> around the x-axis between <span class="math notranslate nohighlight">\(-R\)</span> and <span class="math notranslate nohighlight">\(R\)</span>.</p>
-<p><img alt="a" src="https://miro.medium.com/max/2400/0*d7QEcno6XhPOiJSt.png" /></p>
-<p>Use the following steps to estimate the volume of a sphere of radius 1.</p>
+<p>This question is designed to allow you to combine loops and functions together.
+It is a very typical example of how we might perform a computation in scientific computing.
+If you couldn’t complete it this time it would make excellent exam preparation!</p>
+<p>We need to calculate the sum of the areas of the discs in the following diagram.</p>
+<a class="reference internal image-reference" href="../_images/sphere_vol.jpg"><img alt="sphere volume" src="../_images/sphere_vol.jpg" style="width: 500px;" /></a>
 <ol class="simple">
-<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">vol_disc(R,</span> <span class="pre">x,</span> <span class="pre">dx)</span></code> which returns the volume of the disc centred at position <code class="docutils literal notranslate"><span class="pre">x</span></code> with thickness <code class="docutils literal notranslate"><span class="pre">dx</span></code>.</p></li>
-<li><p>Estimate the volume of a sphere of radius 1 by dividing the figure into 10 discs equally spaced between <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> [use a value of 3.14159 for <span class="math notranslate nohighlight">\(\pi\)</span>].</p></li>
-<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">sphere_vol(R,</span> <span class="pre">n)</span></code> which returns the estimate of the volume of a sphere of radius <code class="docutils literal notranslate"><span class="pre">R</span></code> calculated by dividing it into <code class="docutils literal notranslate"><span class="pre">n</span></code> discs.</p></li>
-<li><p>The estimate should get more accurate as we increase <code class="docutils literal notranslate"><span class="pre">n</span></code>. We can estimate the accuracy by calculating the difference between <code class="docutils literal notranslate"><span class="pre">sphere_vol(R,</span> <span class="pre">n)</span></code> and <code class="docutils literal notranslate"><span class="pre">sphere_vol(R,</span> <span class="pre">n-1)</span></code>. For <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">1</span></code>, how large does <code class="docutils literal notranslate"><span class="pre">n</span></code> need to be so that difference between consecutive estimates is less than <span class="math notranslate nohighlight">\(10^{-4}\)</span>?</p></li>
+<li><p>First, write a function <code class="docutils literal notranslate"><span class="pre">vol_disc</span></code> which returns the volume of a single disc. Writing the function first allows to test this code separately from the remaining complexity of the problem.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This question is designed to allow you to combine loops and functions together.</span>
-<span class="c1"># It is a very typical example of how we might perform a computation in scientific computing.</span>
-<span class="c1"># If you couldn&#39;t complete it this time it would make excellent exam preparation!</span>
-
-<span class="c1"># 1. Writing the function first allows to test this code separately from the remaining complexity</span>
-<span class="c1"># of the problem. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. </span>
 
 <span class="k">def</span> <span class="nf">vol_disc</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
     <span class="k">return</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dx</span>
     <span class="c1"># We hardcode the value of pi here. Later you will learn about numpy, a mathematical</span>
     <span class="c1"># library containing many useful functions, including a value for pi.</span>
-
-<span class="c1"># 2. We first set variables containing values we will use in the computation.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Next, calculate the sum of 10 discs. The width of each is 2 / 10.</p></li>
+</ol>
+<p>There are 10 discs, with <code class="docutils literal notranslate"><span class="pre">i</span></code> running from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>. Left hand edge of disc <code class="docutils literal notranslate"><span class="pre">i</span></code> is at position <code class="docutils literal notranslate"><span class="pre">x=-1</span> <span class="pre">+</span> <span class="pre">(i/10)</span> <span class="pre">*</span> <span class="pre">2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. We first set variables containing values we will use in the computation.</span>
 <span class="n">vol</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">10</span> <span class="c1"># width of each disc</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">10</span> <span class="c1"># width of each disc</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># the x position of the left-hand edge of each disc</span>
-    <span class="n">vol</span> <span class="o">+=</span> <span class="n">vol_disc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+    <span class="n">vol</span> <span class="o">+=</span> <span class="n">vol_disc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume of sphere radius 1:&quot;</span><span class="p">,</span> <span class="n">vol</span><span class="p">)</span>
 
 <span class="c1"># let&#39;s check it against the formula vol = (4/3)*pi*r**3</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4/3 * pi * 1^3:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.14159</span><span class="p">)</span>
-
-<span class="c1"># 3. It would be a good idea to draw a diagram before writing this code. </span>
-
-<span class="k">def</span> <span class="nf">sphere_vol</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volume of sphere radius 1: 4.1468988
+4/3 * pi * 1^3: 4.188786666666666
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Extend to a sphere of radius <code class="docutils literal notranslate"><span class="pre">R</span></code> divided into <code class="docutils literal notranslate"><span class="pre">n</span></code> discs. Left hand edge of disc <code class="docutils literal notranslate"><span class="pre">i</span></code> is at position <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">-R</span> <span class="pre">+</span> <span class="pre">(i</span> <span class="pre">/</span> <span class="pre">n)</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">R</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sphere_vol</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">vol</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span> <span class="o">/</span> <span class="n">n</span>
     <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
@@ -413,34 +385,79 @@ Number of prime numbers up to 11: 5
         <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span> <span class="c1"># x is the position of the  left-hand edge of each disc</span>
         <span class="n">vol</span> <span class="o">+=</span> <span class="n">vol_disc</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">vol</span>
-
-<span class="c1"># 4. Use a while loop so that we terminate once we reach the required level of accuracy</span>
-        
-<span class="n">diff</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>This is another application of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. We need to terminate once the difference between consecutive estimates is less than the tolerance of <span class="math notranslate nohighlight">\(1 \times 10^{-4}\)</span>.</p></li>
+</ol>
+<p>To calculate this, we need to keep track of the previous estimate using a variable <code class="docutils literal notranslate"><span class="pre">vol_prev</span></code> then calculate the difference. But note that the difference could be positive or negative, which is why we have the condition <code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">&gt;</span> <span class="pre">1e-4</span> <span class="pre">and</span> <span class="pre">diff</span> <span class="pre">&lt;</span> <span class="pre">-1e-4</span></code>. When we learn about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we can instead use the function <code class="docutils literal notranslate"><span class="pre">np.abs</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">vol</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">while</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="mf">1e-4</span><span class="p">:</span>
+<span class="k">while</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="mf">1e-4</span> <span class="ow">or</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">1e-4</span><span class="p">:</span>
     <span class="n">vol_prev</span> <span class="o">=</span> <span class="n">vol</span>
     <span class="n">vol</span> <span class="o">=</span> <span class="n">sphere_vol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="n">diff</span> <span class="o">=</span> <span class="n">vol</span> <span class="o">-</span> <span class="n">vol_prev</span>
-    <span class="c1"># could use np.abs here instead (when you learn about numpy)</span>
-    <span class="k">if</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="n">diff</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vol</span><span class="p">)</span>
+
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="c1"># print(&quot;vol:&quot;, vol)</span>
     <span class="c1"># print(&quot;diff:&quot;, diff)</span>
         
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vol</span><span class="p">)</span>
-    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;vol =&quot;</span><span class="p">,</span> <span class="n">vol</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volume of sphere radius 1: 4.1468988
-4/3 * pi * 1^3: 4.188786666666666
-46
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14159
+3.7233659259259255
+3.9269874999999996
+4.0212352
+4.07243148148148
+4.103301224489796
+4.123336875
+4.137073251028807
+4.1468988
+4.154168595041322
+4.159697870370369
+4.164000946745562
+4.167415306122448
+4.170169837037037
+4.17242421875
+4.174292595155709
+4.175858312757201
+4.177183379501384
+4.1783147000000005
+4.17928828420257
+4.18013214876033
+4.180868355387524
+4.181514467592592
+4.182084608
+4.182590236686392
+4.183040731595793
+4.183443826530612
+4.1838059453032095
+4.184132459259258
+4.1844278876170655
+4.1846960546875
+4.18494021426385
+4.185163148788927
+4.185367248979591
+4.185554578189301
+4.1857269247626006
+4.1858858448753455
+4.186032697786543
+4.186168674999999
+4.186294824509221
+4.1864120710506425
+4.186521233098971
+4.186623037190083
 4.186718130041153
+n = 46 vol = 4.186718130041153
 </pre></div>
 </div>
 </div>

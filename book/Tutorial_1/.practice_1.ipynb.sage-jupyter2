@@ -8,5 +8,5 @@
 {"cell_type":"markdown","id":"40ff1e","input":"## Question 2\n\nFind the 'pseudocode' box in the notes. Write Python code which implements the program described there.\n\n> The value of a loan increases by 1.3% every month, except in December when it is reduced by 100 pounds. How many months will it take for a 1000 pound loan to reach 2000 pounds?\n\nHow many months does it take if the monthly interest rate is changed to 0.8%?","pos":3,"type":"cell"}
 {"cell_type":"markdown","id":"54f2a2","input":"## Question 1\n\nRecall the definition of factorial of a number $n$:\n\n$$n! = n \\times (n-1) \\times \\ldots \\times 2 \\times 1$$\n\nUse the following pseudocode to calculate the factorial of 10.\n\n```none\nSet n to 10\nSet f to 1\nRepeat until n is 1:\n - Set f to f times n\n - Decrease n by 1\nPrint f\n```","pos":1,"type":"cell"}
 {"cell_type":"markdown","id":"a5345f","input":"## Question 3\n\nWrite a program which use the quadratic formula to print the solution to the quadratic equation $ax^2 + bx + c = 0$, given variables `a`, `b`, and `c`. Your program should print:\n\n```\nThe solutions are x = 4 and x = 1\n```\nor\n```\nThe solution is x = 1\n```\nor\n```\nThere are no real solutions\n```\n(Hint: first calculate the discriminant $b^2-4ac$).\n","pos":5,"type":"cell"}
-{"id":0,"time":1636110634713,"type":"user"}
-{"last_load":1634750766684,"type":"file"}
+{"id":0,"time":1636122472690,"type":"user"}
+{"last_load":1636122472928,"type":"file"}

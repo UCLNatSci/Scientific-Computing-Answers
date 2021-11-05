@@ -202,7 +202,7 @@ while i <= 200: # while i is less than *or equal to* 200
     print(n, i)
     n = n + 1
     
-print("The Collatz Number of ", n - 1, "is", i) #note that we have to subract 1 from 
+print("The Collatz Number of ", n - 1, "is", i) #note that we have to subract 1 from n here
 
 
 # In[ ]:
