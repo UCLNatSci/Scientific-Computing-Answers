@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: Tutorial_1/practice_1.ipynb
+- file: Tutorial_1/tutorial_1.ipynb
+- file: Tutorial_2/practice_2.ipynb
+- file: Tutorial_2/tutorial_2.ipynb
+#- file: Tutorial_3/practice_3.ipynb
+# - file: Tutorial_3/tutorial_3.ipynb
+# - file: Tutorial_4/practice_4.ipynb
+# - file: Tutorial_4/tutorial_4.ipynb
+# - file: Tutorial_5/tutorial_5.ipynb
+# - file: Tutorial_6/tutorial_6.ipynb
+
