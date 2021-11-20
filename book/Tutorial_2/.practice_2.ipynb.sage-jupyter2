@@ -6,5 +6,5 @@
 {"cell_type":"markdown","id":"509602","input":"# Practice 2","pos":0,"type":"cell"}
 {"cell_type":"markdown","id":"907c3c","input":"## Question 4\n\nCopy the three function definitions `get_number_of_day`, `get_day_of_week` and `print_day_of_week_from_number_of_year` from the notes. Correct the code so that it prints the day of the week correctly.","pos":3,"type":"cell"}
 {"cell_type":"markdown","id":"aaf612","input":"## Question 5","pos":5,"type":"cell"}
-{"id":0,"time":1636122575193,"type":"user"}
-{"last_load":1636122334840,"type":"file"}
+{"id":0,"time":1636648441257,"type":"user"}
+{"last_load":1636648440886,"type":"file"}
