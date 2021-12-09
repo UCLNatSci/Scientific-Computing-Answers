@@ -12,6 +12,9 @@ chapters:
 - file: Tutorial_3/tutorial_3.ipynb
 - file: Tutorial_4/practice_4.ipynb
 - file: Tutorial_4/tutorial_4.ipynb
-# - file: Tutorial_5/tutorial_5.ipynb
-# - file: Tutorial_6/tutorial_6.ipynb
-
+- file: Tutorial_5/practice_5.ipynb
+- file: Tutorial_5/tutorial_5.ipynb
+- file: Tutorial_6/practice_6.ipynb
+- file: Tutorial_6/tutorial_6.ipynb
+# - file: Practice_Exam_1/NSCI0007_practice_exam_answers.ipynb
+# - file: Practice_Exam_2/answers.ipynb

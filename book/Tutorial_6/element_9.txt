@@ -1,0 +1,4 @@
+Fluorine
+gas: very pale yellow
+liquid: bright yellow
+solid: alpha is opaque, beta is transparent
