@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Practice 4 &#8212; Scientific Computing Answers</title>
+    <title>Practice 5 &#8212; Scientific Computing Answers</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorial 4" href="tutorial_4.html" />
-    <link rel="prev" title="Tutorial 3" href="../Tutorial_3/tutorial_3.html" />
+    <link rel="next" title="Tutorial 5" href="tutorial_5.html" />
+    <link rel="prev" title="Tutorial 4" href="../Tutorial_4/tutorial_4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -120,23 +122,23 @@
    Tutorial 3
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tutorial_4/practice_4.html">
    Practice 4
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tutorial_4.html">
+  <a class="reference internal" href="../Tutorial_4/tutorial_4.html">
    Tutorial 4
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Tutorial_5/practice_5.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Practice 5
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Tutorial_5/tutorial_5.html">
+  <a class="reference internal" href="tutorial_5.html">
    Tutorial 5
   </a>
  </li>
@@ -191,7 +193,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Tutorial_4/practice_4.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Tutorial_5/practice_5.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -236,11 +238,6 @@
    Question 3
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-4">
-   Question 4
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -252,47 +249,35 @@
         
               <div>
                 
-  <div class="section" id="practice-4">
-<h1>Practice 4<a class="headerlink" href="#practice-4" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="practice-5">
+<h1>Practice 5<a class="headerlink" href="#practice-5" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="question-1">
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
-<span class="n">s_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+<span class="n">row_1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First row:&quot;</span><span class="p">,</span> <span class="n">row_1</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">s_len</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+<span class="n">column_2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;last column:&quot;</span><span class="p">,</span> <span class="n">column_2</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">])</span>
-    
+
+<span class="n">sum_column</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>  <span class="o">+</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum of columns:&quot;</span><span class="p">,</span> <span class="n">sum_column</span><span class="p">)</span>
+
+<span class="n">sum_row</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum of rows:&quot;</span><span class="p">,</span> <span class="n">sum_row</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABC
-BCD
-CDE
-DEF
-EFG
-FGH
-GHI
-HIJ
-IJK
-JKL
-KLM
-LMN
-MNO
-NOP
-OPQ
-PQR
-QRS
-RST
-STU
-TUV
-UVW
-VWX
-WXY
-XYZ
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First row: [10 12 13]
+last column: [13  7]
+sum of columns: [35 18]
+sum of rows: [15 18 20]
 </pre></div>
 </div>
 </div>
@@ -302,89 +287,66 @@ XYZ
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
-<span class="n">s_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">s_len</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABC
-DEF
-GHI
-JKL
-MNO
-PQR
-STU
-VWX
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3eb00c4a90&gt;]
 </pre></div>
 </div>
+<img alt="../_images/practice_5_4_1.png" src="../_images/practice_5_4_1.png" />
+<img alt="../_images/practice_5_4_2.png" src="../_images/practice_5_4_2.png" />
 </div>
 </div>
 </div>
 <div class="section" id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(r\)</span> is the initial growth rate.
+<span class="math notranslate nohighlight">\(K\)</span> is the ‘carrying capacity’ ie the maximum population.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
-<span class="n">string_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MNO&quot;</span><span class="p">,</span> <span class="s2">&quot;DEF&quot;</span><span class="p">,</span> <span class="s2">&quot;VWX&quot;</span><span class="p">,</span> <span class="s2">&quot;JKL&quot;</span><span class="p">,</span> <span class="s2">&quot;PQR&quot;</span><span class="p">,</span> <span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="s2">&quot;STU&quot;</span><span class="p">,</span> <span class="s2">&quot;GHI&quot;</span><span class="p">]</span>
-<span class="n">character_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">]</span>
-
-<span class="n">s_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-
-<span class="c1">#loop over the characters of s three at a time</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">s_len</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
-    <span class="n">substring</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
-    <span class="c1">#find the position of each 3-character string in string_list</span>
-    <span class="n">position</span> <span class="o">=</span> <span class="n">string_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">substring</span><span class="p">)</span>
-    <span class="c1">#print the character in the equivalent position in character_list</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">character_list</span><span class="p">[</span><span class="n">position</span><span class="p">])</span>
-    
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S
-C
-I
-E
-N
-C
-E
-!
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="question-4">
-<h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shape_data</span> <span class="o">=</span> <span class="s2">&quot;13,1; 14,1; 15,1; 16,1; 17,1; 18,1; 12,2; 14,2; 15,2; 16,2; 17,2; 18,2; 19,2; 11,3; 12,3; 14,3; 15,3; 16,3; 17,3; 18,3; 19,3; 20,3; 10,4; 16,4; 17,4; 18,4; 19,4; 20,4; 10,5; 17,5; 18,5; 19,5; 20,5; 21,5; 17,6; 18,6; 19,6; 20,6; 21,6; 9,7; 18,7; 19,7; 20,7; 21,7; 9,8; 18,8; 19,8; 20,8; 21,8; 9,9; 10,9; 12,9; 14,9; 16,9; 17,9; 18,9; 19,9; 20,9; 21,9; 9,10; 16,10; 18,10; 19,10; 20,10; 21,10; 9,11; 18,11; 19,11; 20,11; 21,11; 22,11; 9,12; 18,12; 19,12; 20,12; 21,12; 22,12; 8,13; 9,13; 10,13; 14,13; 17,13; 18,13; 19,13; 20,13; 21,13; 22,13; 8,14; 9,14; 10,14; 13,14; 17,14; 18,14; 19,14; 20,14; 21,14; 22,14; 8,15; 9,15; 10,15; 13,15; 14,15; 17,15; 18,15; 19,15; 20,15; 21,15; 22,15; 8,16; 9,16; 10,16; 11,16; 16,16; 17,16; 18,16; 19,16; 20,16; 21,16; 22,16; 8,17; 9,17; 10,17; 11,17; 15,17; 16,17; 17,17; 18,17; 19,17; 20,17; 21,17; 22,17; 8,18; 9,18; 10,18; 11,18; 12,18; 14,18; 15,18; 16,18; 17,18; 18,18; 19,18; 20,18; 21,18; 22,18; 9,19; 10,19; 11,19; 12,19; 13,19; 14,19; 15,19; 16,19; 17,19; 18,19; 19,19; 20,19; 21,19; 22,19; 9,20; 10,20; 11,20; 12,20; 13,20; 15,20; 16,20; 17,20; 19,20; 20,20; 21,20; 22,20; 23,20; 10,21; 11,21; 12,21; 13,21; 19,21; 20,21; 21,21; 22,21; 23,21; 20,22; 21,22; 22,22; 23,22; 9,23; 10,23; 20,23; 21,23; 22,23; 23,23; 24,23; 8,24; 9,24; 10,24; 20,24; 21,24; 22,24; 23,24; 24,24; 25,24; 8,25; 9,25; 10,25; 20,25; 21,25; 22,25; 23,25; 25,25; 26,25; 7,26; 8,26; 9,26; 20,26; 21,26; 25,26; 26,26; 27,26; 6,27; 7,27; 8,27; 19,27; 24,27; 25,27; 26,27; 27,27; 28,27; 5,28; 6,28; 7,28; 8,28; 22,28; 23,28; 24,28; 25,28; 26,28; 27,28; 28,28; 29,28; 5,29; 6,29; 7,29; 8,29; 9,29; 20,29; 21,29; 22,29; 23,29; 24,29; 25,29; 26,29; 27,29; 28,29; 29,29; 4,30; 5,30; 6,30; 7,30; 8,30; 9,30; 10,30; 11,30; 12,30; 19,30; 20,30; 21,30; 22,30; 23,30; 24,30; 25,30; 26,30; 27,30; 28,30; 29,30; 3,31; 4,31; 5,31; 6,31; 7,31; 8,31; 9,31; 10,31; 11,31; 12,31; 13,31; 14,31; 15,31; 16,31; 17,31; 18,31; 19,31; 20,31; 21,31; 22,31; 23,31; 24,31; 25,31; 26,31; 27,31; 28,31; 29,31; 30,31&quot;</span>
-
-<span class="n">x_coords</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">y_coords</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="n">coords</span> <span class="o">=</span> <span class="n">shape_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">:</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">xy</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-    <span class="n">x_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-    <span class="n">y_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coords</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">)</span>
+
+<span class="c1"># set parameter values</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_hours</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">initial_population</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># create array of time points</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_hours</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_hours</span><span class="p">)</span>
+<span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">initial_population</span>
+
+<span class="c1"># run simulation</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_hours</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">pop</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">K</span><span class="p">)</span> <span class="o">*</span> <span class="n">pop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pop</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f7c50a00d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3ea3f43610&gt;]
 </pre></div>
 </div>
-<img alt="../_images/practice_4_7_1.png" src="../_images/practice_4_7_1.png" />
+<img alt="../_images/practice_5_6_1.png" src="../_images/practice_5_6_1.png" />
 </div>
 </div>
 </div>
@@ -403,7 +365,7 @@ E
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Tutorial_4"
+            path: "./Tutorial_5"
         },
         predefinedOutput: true
     }
@@ -420,19 +382,19 @@ E
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Tutorial_3/tutorial_3.html" title="previous page">
+        <a class="left-prev" href="../Tutorial_4/tutorial_4.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Tutorial 3</p>
+                <p class="prevnext-title">Tutorial 4</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="tutorial_4.html" title="next page">
+        <a class="right-next" href="tutorial_5.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Tutorial 4</p>
+                <p class="prevnext-title">Tutorial 5</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
