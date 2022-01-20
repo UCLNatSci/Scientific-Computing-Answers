@@ -15,5 +15,5 @@
 {"cell_type":"markdown","id":"addbcd","input":"# NSCI0007 Practice Exam 2\n## Specimen Answers and Mark Scheme\n- The specimen code below demonstrates one way to correctly answer the questions.\n- Full marks will be awarded if the candidate has implemented another suitable method and the code behaves as specified in the question.\n- If the candidate's code produces an error, or does not behave as specified in the question, partial credit will be awarded as described in the mark scheme.\n- Where a candidate has used a different method to below, partial credit will be awarded in an analogous way.","pos":0,"type":"cell"}
 {"cell_type":"markdown","id":"c2a619","input":"## Question 5","pos":10,"type":"cell"}
 {"cell_type":"markdown","id":"d92888","input":"## Question 6","pos":12,"type":"cell"}
-{"id":0,"time":1638287639035,"type":"user"}
-{"last_load":1638301999779,"type":"file"}
+{"id":0,"time":1639495834436,"type":"user"}
+{"last_load":1639495844611,"type":"file"}
